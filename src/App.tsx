@@ -7,9 +7,14 @@ import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
 import { Dashboard } from "./dashboard";
 import { authProvider } from "./authProvider";
+import polyglotI18nProvider from "ra-i18n-polyglot";
+import japaneseMessages from "@bicstone/ra-language-japanese";
+
+const i18nProvider = polyglotI18nProvider(() => japaneseMessages, "ja");
 
 export const App = () => (
   <Admin
+    i18nProvider={i18nProvider}
     dataProvider={dataProvider}
     dashboard={Dashboard}
     authProvider={authProvider}
